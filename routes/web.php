@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CategoriesController;
+use App\Http\Controllers\SubcategoriesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', function () {
+    return view('welcome');
+})->name('getback');
+
+Route::get('/categories', [CategoriesController::class, 'index'])->name('catgo');
+Route::get('/subcatgories', [SubcategoriesController::class, 'index'])->name('subcatgo');
